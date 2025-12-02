@@ -18,6 +18,10 @@ export default function ClientsScreen() {
   const [businessName, setBusinessName] = useState();
   const [area, setArea] = useState();
   const [mobile, setMobile] = useState();
+  const [address, setAddress] = useState();
+const [city, setCity] = useState();
+const [month, setMonth] = useState();
+const [year, setYear] = useState();
   
 
   const invoices = [
@@ -212,71 +216,86 @@ export default function ClientsScreen() {
       
 
       <Modal
-              animationType="fade"
-              transparent={true}
-              visible={openFilter}
-              onRequestClose={() => setOpenFilter(false)}
-            >
-              <TouchableWithoutFeedback onPress={() => setOpenFilter(false)}>
-                <View className="flex-1 bg-black/40 items-center px-4">
-      
-                  <TouchableWithoutFeedback>
-                    <View className="w-[376px] bg-white rounded-3xl p-6 mt-[200px]">
-                      
-                     
-                      {/* Business Name */}
-                      <TextInput
-                        placeholder="Enter Business Name"
-                        className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
-                        value={businessName}
-                        onChangeText={setBusinessName}
-                      />
-      
-                      {/* Area */}
-                      <TextInput
-                        placeholder="Enter Area"
-                        className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
-                        value={area}
-                        onChangeText={setArea}
-                      />
-      
-                      {/* Mobile No */}
-                      <TextInput
-                        placeholder="Enter Mobile Number"
-                        className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
-                        keyboardType="numeric"
-                        value={mobile}
-                        onChangeText={setMobile}
-                      />
-      
-                      {/* Buttons Row */}
-                      <View className="flex-row justify-between mt-8">
-      
-                        {/* Clean Filter Button */}
-                        <TouchableOpacity
-                          className="flex-1 py-3 rounded-xl border border-blue-500 items-center mr-3"
-                          onPress={() => {
-                            setBusinessName("");
-                            setArea("");
-                            setMobile("");
-                          }}
-                        >
-                          <Text className="text-blue-500 font-semibold">Clean Filter</Text>
-                        </TouchableOpacity>
-      
-                        {/* Filter Button */}
-                        <TouchableOpacity className="flex-1 py-3 rounded-xl bg-blue-500 items-center">
-                          <Text className="text-white font-semibold">Filter</Text>
-                        </TouchableOpacity>
-      
-                      </View>
-      
-                    </View>
-                  </TouchableWithoutFeedback>
-      
+        animationType="fade"
+        transparent={true}
+        visible={openFilter}
+        onRequestClose={() => setOpenFilter(false)}
+      >
+        <TouchableWithoutFeedback onPress={() => setOpenFilter(false)}>
+          <View className="flex-1 bg-black/40 items-center justify-center px-4">
+
+            <TouchableWithoutFeedback>
+              <View className="w-[360px] bg-white rounded-3xl p-6">
+
+                {/* Business Name */}
+                <TextInput
+                  placeholder="Enter Business Name"
+                  className="bg-[#f4f7fc] px-4 py-3 rounded-xl border border-gray-200 mb-4"
+                  value={businessName}
+                  onChangeText={setBusinessName}
+                />
+
+                {/* Address Line */}
+                <TextInput
+                  placeholder="Enter Office/House/Shop No. and Building Name"
+                  className="bg-[#f4f7fc] px-4 py-3 rounded-xl border border-gray-200 mb-4"
+                  value={address}
+                  onChangeText={setAddress}
+                />
+
+                {/* Select City (Dropdown UI feel) */}
+                <TouchableOpacity className="bg-[#f4f7fc] px-4 py-3 rounded-xl border border-gray-200 mb-4 flex-row justify-between items-center">
+                  <Text className="text-gray-500">{city || "Select city"}</Text>
+                  <Text className="text-gray-400">▼</Text>
+                </TouchableOpacity>
+
+                {/* Month + Year Row */}
+                <View className="flex-row gap-3 mb-6">
+
+                  {/* Month Dropdown */}
+                  <TouchableOpacity className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-gray-200 flex-row justify-between items-center">
+                    <Text className="text-gray-500">{month || "Month"}</Text>
+                    <Text className="text-gray-400">▼</Text>
+                  </TouchableOpacity>
+
+                  {/* Year Dropdown */}
+                  <TouchableOpacity className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-gray-200 flex-row justify-between items-center">
+                    <Text className="text-gray-500">{year || "Year"}</Text>
+                    <Text className="text-gray-400">▼</Text>
+                  </TouchableOpacity>
+
                 </View>
-              </TouchableWithoutFeedback>
-            </Modal>
+
+                {/* Buttons Row */}
+                <View className="flex-row gap-3">
+
+                  {/* Clean Filter */}
+                  <TouchableOpacity
+                    className="flex-1 py-3 rounded-xl border border-blue-500 items-center"
+                    onPress={() => {
+                      setBusinessName("");
+                      setAddress("");
+                      setCity("");
+                      setMonth("");
+                      setYear("");
+                    }}
+                  >
+                    <Text className="text-blue-500 font-semibold">Clean Filter</Text>
+                  </TouchableOpacity>
+
+                  {/* Filter */}
+                  <TouchableOpacity className="flex-1 py-3 rounded-xl bg-blue-500 items-center">
+                    <Text className="text-white font-semibold">Filter</Text>
+                  </TouchableOpacity>
+
+                </View>
+
+              </View>
+            </TouchableWithoutFeedback>
+
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
 
     </View>
   );
