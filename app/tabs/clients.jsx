@@ -11,6 +11,7 @@ import {
 import { Ionicons, Feather } from "@expo/vector-icons";
 import BottomNavBar from "../../components/BootamNavbar";
 import Header from "../../components/Header";
+import FilterIcon from "../../assets/icons/filterIcon.svg"
 
 export default function ClientsScreen() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -53,15 +54,14 @@ export default function ClientsScreen() {
 
       {/* -------- Title -------- */}
       <View className="flex-row items-center justify-between px-5 mt-8">
-        <Text className="text-2xl font-semibold text-gray-600">Client</Text>
+        <Text className="text-2xl font-semibold text-[#AAAAAA]">Client</Text>
 
         <TouchableOpacity
-            onPress={() => setOpenFilter(true)}
-            className="h-12 w-12 rounded-xl bg-white items-center justify-center shadow"
-            >
-            <Feather name="filter" size={35} />
+          onPress={() => setOpenFilter(true)}
+          className="h-12 w-12 rounded-xl bg-white items-center justify-center shadow"
+        >
+          <FilterIcon width={40} height={35} />
         </TouchableOpacity>
-
       </View>
 
       {/* -------- Client List -------- */}
@@ -99,84 +99,84 @@ export default function ClientsScreen() {
 
       <BottomNavBar />
 
-     <Modal
-        animationType="fade"
-        transparent={true}
-        visible={openPopup}
-        onRequestClose={() => setOpenPopup(false)}
-      >
-        {/* OUTSIDE CLICK */}
-        <TouchableWithoutFeedback onPress={() => setOpenPopup(false)}>
-          <View className="flex-1 bg-black/40 items-center px-4">
+      <Modal
+          animationType="fade"
+          transparent={true}
+          visible={openPopup}
+          onRequestClose={() => setOpenPopup(false)}
+        >
+          {/* OUTSIDE CLICK */}
+          <TouchableWithoutFeedback onPress={() => setOpenPopup(false)}>
+            <View className="flex-1 bg-black/40 items-center px-4">
 
-            {/* STOP PROPAGATION (WHITE BOX) */}
-            <TouchableWithoutFeedback>
-              <View className="w-[376px] h-[636px] bg-white rounded-3xl p-7 justify-between mt-[100px]">
+              {/* STOP PROPAGATION (WHITE BOX) */}
+              <TouchableWithoutFeedback>
+                <View className="w-[376px] h-[636px] bg-white rounded-3xl p-7 justify-between mt-[100px]">
 
-                {/* Close Button */}
-                <TouchableOpacity
-                  onPress={() => setOpenPopup(false)}
-                  className="absolute top-3 right-4 h-10 w-10 bg-blue-500 rounded-full items-center justify-center shadow"
-                >
-                  <Ionicons name="close" size={22} color="white" />
-                </TouchableOpacity>
+                  {/* Close Button */}
+                  <TouchableOpacity
+                    onPress={() => setOpenPopup(false)}
+                    className="absolute top-3 right-4 h-10 w-10 bg-blue-500 rounded-full items-center justify-center shadow"
+                  >
+                    <Ionicons name="close" size={22} color="white" />
+                  </TouchableOpacity>
 
-                {/* All Inputs */}
-                <View>
+                  {/* All Inputs */}
+                  <View>
 
-                  <Text className="text-gray-600 mb-1">Name</Text>
-                  <View className="flex-row gap-3 mb-4">
+                    <Text className="text-gray-600 mb-1">Name</Text>
+                    <View className="flex-row gap-3 mb-4">
+                      <TextInput
+                        placeholder="First Name"
+                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                      />
+                      <TextInput
+                        placeholder="Last Name"
+                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                      />
+                    </View>
+
+                    <Text className="text-gray-600 mb-1">Phone</Text>
                     <TextInput
-                      placeholder="First Name"
-                      className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                      placeholder="+91 00000 00000"
+                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
                     />
+
+                    <Text className="text-gray-600 mb-1">Email Address</Text>
                     <TextInput
-                      placeholder="Last Name"
-                      className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                      placeholder="youremail@gmail.com"
+                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
                     />
+
+                    <Text className="text-gray-600 mb-1">Address</Text>
+
+                    <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
+                    <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
+                    <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
+
+                    <View className="flex-row gap-3 mb-3">
+                      <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                      <TextInput placeholder="Pincode" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                    </View>
+
+                    <View className="flex-row gap-3">
+                      <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                      <TextInput placeholder="State" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                    </View>
+
                   </View>
 
-                  <Text className="text-gray-600 mb-1">Phone</Text>
-                  <TextInput
-                    placeholder="+91 00000 00000"
-                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
-                  />
-
-                  <Text className="text-gray-600 mb-1">Email Address</Text>
-                  <TextInput
-                    placeholder="youremail@gmail.com"
-                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
-                  />
-
-                  <Text className="text-gray-600 mb-1">Address</Text>
-
-                  <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                  <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                  <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-
-                  <View className="flex-row gap-3 mb-3">
-                    <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                    <TextInput placeholder="Pincode" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                  </View>
-
-                  <View className="flex-row gap-3">
-                    <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                    <TextInput placeholder="State" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                  </View>
+                  {/* Submit Button */}
+                  <TouchableOpacity className="bg-blue-500 py-4 rounded-2xl items-center mb-3 mt-2">
+                    <Text className="text-white text-lg font-semibold">Add Client →</Text>
+                  </TouchableOpacity>
 
                 </View>
+              </TouchableWithoutFeedback>
 
-                {/* Submit Button */}
-                <TouchableOpacity className="bg-blue-500 py-4 rounded-2xl items-center mb-3 mt-2">
-                  <Text className="text-white text-lg font-semibold">Add Client →</Text>
-                </TouchableOpacity>
-
-              </View>
-            </TouchableWithoutFeedback>
-
-          </View>
-        </TouchableWithoutFeedback>
-     </Modal>
+            </View>
+          </TouchableWithoutFeedback>
+      </Modal>
 
       <Modal
         animationType="fade"

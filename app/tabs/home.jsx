@@ -1,6 +1,6 @@
 import React, {}  from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+// import { Feather } from "@expo/vector-icons";
 import BottomNavBar from "../../components/BootamNavbar";
 import Header from "../../components/Header";
 import ItemSummaryIcon from "../../assets/icons/ItemSummary.svg";
