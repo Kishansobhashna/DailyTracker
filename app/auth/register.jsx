@@ -30,7 +30,7 @@ export default function RegisterPreference() {
         {/* Vendor */}
         <TouchableOpacity
           className="w-full flex-row items-center justify-center px-5 py-4 bg-[#3B6EF6] rounded-3xl mb-4"
-          onPress={() => router.push("/tabs/home")}
+          onPress={() => router.push("/auth/vendorRegister")}
         >
          <View className="bg-white h-10 w-10 rounded-full mr-2 justify-center items-center">
           <Text className="text-[20px]">🏛️</Text>

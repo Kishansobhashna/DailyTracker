@@ -103,16 +103,16 @@ export default function LoginScreen() {
         {/* Remember me + Forgot Password */}
         <View className="w-full flex-row justify-between items-center mb-6">
           <View className="flex-row items-center">
-  <TouchableOpacity onPress={() => setRemember(!remember)}>
-    {remember ? (
-      <Ionicons name="checkbox-outline" size={22} color="#3B6EF6" />
-    ) : (
-      <Ionicons name="square-outline" size={22} color="#3B6EF6" />
-    )}
-  </TouchableOpacity>
+            <TouchableOpacity onPress={() => setRemember(!remember)}>
+              {remember ? (
+                <Ionicons name="checkbox-outline" size={22} color="#3B6EF6" />
+              ) : (
+                <Ionicons name="square-outline" size={22} color="#3B6EF6" />
+              )}
+            </TouchableOpacity>
 
-  <Text className="ml-2 text-gray-700">Remember me</Text>
-</View>
+            <Text className="ml-2 text-gray-700">Remember me</Text>
+          </View>
 
           <TouchableOpacity onPress={() => router.push("/auth/forgetpassword")}>
             <Text className="text-[#3B6EF6] font-medium">Forgot Password?</Text>
