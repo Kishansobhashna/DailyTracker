@@ -136,11 +136,10 @@ export default function ClientsScreen() {
 
             {/* AMOUNT + ARROW */}
             <View className="justify-center items-end">
-              <Text className="text-[13px] font-semibold text-gray-700">
+              <Text className="text-[13px] font-semibold items-center text-gray-700">
                 {item.amount}
+                <Feather name="chevron-right" size={22} color="#2E3A59" />
               </Text>
-
-              <Feather name="chevron-right" size={22} color="#2E3A59" />
             </View>
 
           </TouchableOpacity>
@@ -151,7 +150,7 @@ export default function ClientsScreen() {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => setOpenPopup(true)}
-        className="absolute bottom-24 right-6 h-14 w-14 mb-10 bg-blue-500 rounded-full items-center justify-center shadow-lg"
+        className="absolute bottom-24 right-6 h-14 w-14 mb-12 bg-blue-500 rounded-full items-center justify-center shadow-lg"
       >
         <Ionicons name="add" size={28} color="white" />
       </TouchableOpacity>
@@ -229,7 +228,9 @@ export default function ClientsScreen() {
                     className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
                   />
 
-                  <Text className="text-gray-600 mb-2 border-t">Address</Text>
+                  <View className="w-full border-t border-gray-200" />
+
+                  <Text className="text-gray-600 mb-2 ">Address</Text>
 
                   <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
                   <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
@@ -240,7 +241,9 @@ export default function ClientsScreen() {
                     <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
                   </View>
 
-                  <Text className="text-gray-600 mb-1 border-t">Items</Text>
+                  <View className="w-full border-t border-gray-200" />
+
+                  <Text className="text-gray-600 mb-1">Items</Text>
                   <View className="flex-row gap-3 mb-1">
                     <TextInput placeholder="Select Item" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
                     <TextInput placeholder="Enter Qty" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />

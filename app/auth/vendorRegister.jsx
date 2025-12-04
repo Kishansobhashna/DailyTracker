@@ -130,9 +130,9 @@ export default function VendorRegisterForm() {
         </TouchableOpacity>
 
         {/* Footer */}
-        <Text className="text-center text-gray-500 mb-10">
+        <Text className="text-center text-gray-500 mb-10" onPress={() => router.push("/auth/login")}>
           Already have an account?{" "}
-          <Text className="text-[#3B82F6]">Log In</Text>
+          <Text className="text-[#3B82F6]" >Log In</Text>
         </Text>
       </ScrollView>
     </View>

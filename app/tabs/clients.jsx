@@ -92,7 +92,7 @@ export default function ClientsScreen() {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => setOpenPopup(true)}
-        className="absolute bottom-24 right-6 h-14 w-14 mb-10 bg-blue-500 rounded-full items-center justify-center shadow-lg"
+        className="absolute bottom-24 right-6 h-14 w-14 mb-12 bg-blue-500 rounded-full items-center justify-center shadow-lg"
       >
         <Ionicons name="add" size={28} color="white" />
       </TouchableOpacity>
