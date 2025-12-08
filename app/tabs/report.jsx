@@ -4,6 +4,7 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Image
 } from "react-native";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import BottomNavBar from "../../components/BootamNavbar";
@@ -23,9 +24,9 @@ export default function ClientsScreen() {
         <Text className="text-2xl font-semibold text-[#AAAAAA]">Report</Text>
       </View>
 
-      <ScrollView className="mt-5 px-5 mb-32">
+    <ScrollView className="mt-5 px-5 mb-32">
 
-        <View className="flex-row justify-between mb-4">
+      <View className="flex-row justify-between mb-4">
 
           {tabs.map((tab) => {
             const isActive = activeTab === tab;
@@ -49,84 +50,126 @@ export default function ClientsScreen() {
             );
           })}
 
-        </View>
+      </View>
 
-        <View className="flex-row justify-end items-center space-x-3 mb-4 pr-2">
+      <View className="flex-row justify-end items-center space-x-3 mb-4 pr-2">
           <Feather name="chevron-left" size={20} color="#7a8394" />
           <Text className="text-gray-600 font-semibold text-lg">2025</Text>
           <Feather name="chevron-right" size={20} color="#7a8394" />
-        </View>
+      </View>
 
-        <View className="bg-white rounded-2xl p-4 shadow mb-5">
-          <Text className="font-semibold text-[16px] mb-3 ">Purchase By Items</Text>
+      <View className="bg-white rounded-2xl p-5 shadow mb-5">
 
-          <View className="flex-row">
+          <Text className="font-semibold text-[16px] text-[#9D9D9D] mb-4">
+            Purchase By Items
+          </Text>
 
-            <View className="w-[40%] h-[120px] bg-gray-200 rounded-full" />
+          <View className="flex-row items-center">
 
-            <View className="ml-4 flex-1">
-              <View className="flex-row justify-between mb-2">
-                <Text className="text-gray-700">Water can</Text>
-                <Text className="text-gray-700">44.00%</Text>
+            <Image
+              source={require("../../assets/images/Group 407.png")}
+              className="w-[110px] h-[110px]"
+              resizeMode="contain"
+            />
+
+            <View className="ml-5 flex-1">
+
+              <View className="flex-row justify-between mb-1">
+                <Text className="text-[#4B4B4B] text-[14px]">Water can</Text>
+                <Text className="text-[#4B4B4B] text-[14px]">44.00%</Text>
               </View>
-              <View className="bg-[#4f8bff] h-1.5 rounded-full w-[70%] mb-3" />
-
-              <View className="flex-row justify-between mb-2">
-                <Text className="text-gray-700">Tea</Text>
-                <Text className="text-gray-700">18.50%</Text>
+              <View className="h-1.5 w-full bg-[#E3EAFF] rounded-full mb-3">
+                <View className="h-1.5 bg-[#4f8bff] rounded-full w-[70%]" />
               </View>
-              <View className="bg-gray-800 h-1.5 rounded-full w-[40%] mb-3" />
 
-              <View className="flex-row justify-between mb-2">
-                <Text className="text-gray-700">Coffee</Text>
-                <Text className="text-gray-700">19.50%</Text>
+              <View className="flex-row justify-between mb-1">
+                <Text className="text-[#4B4B4B] text-[14px]">Tea</Text>
+                <Text className="text-[#4B4B4B] text-[14px]">18.50%</Text>
               </View>
-              <View className="bg-gray-300 h-1 rounded-full w-[45%]" />
+              <View className="h-1.5 w-full bg-[#E3EAFF] rounded-full mb-3">
+                <View className="h-1.5 bg-[#000000] rounded-full w-[40%]" />
+              </View>
+
+              <View className="flex-row justify-between mb-1">
+                <Text className="text-[#4B4B4B] text-[14px]">Coffee</Text>
+                <Text className="text-[#4B4B4B] text-[14px]">19.50%</Text>
+              </View>
+              <View className="h-1.5 w-full bg-[#E3EAFF] rounded-full mb-3">
+                <View className="h-1.5 bg-[#9D9D9D] rounded-full w-[45%]" />
+              </View>
+
+              <Text className="text-[12px] text-[#BBBBBB] mt-1">
+                Others...
+              </Text>
+
+            </View>
+
+          </View>
+      </View>
+
+
+      <View className="bg-white rounded-2xl p-5 shadow mb-1">
+
+        <Text className="font-semibold text-[16px] text-[#6F6F6F] mb-4">
+          Purchase By Items
+        </Text>
+
+        <View className="flex-row">
+
+          <View className="justify-between py-2 mr-2">
+            
+            <Text className="text-[10px] text-[#8F97A6]">₹1.5K</Text>
+            <Text className="text-[10px] text-[#8F97A6]">₹1.0K</Text>
+            <Text className="text-[10px] text-[#8F97A6]">₹500</Text>
+            <Text className="text-[10px] text-[#8F97A6]">0</Text>
+          </View>
+
+          <View className="flex-row flex-1 items-end justify-between px-3">
+
+            <View className="items-center">
+              <View className="h-[5px] w-[12  px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Jan</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[25px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Feb</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[100px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Mar</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[70px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Apr</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[95px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">May</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[10px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Jun</Text>
+            </View>
+
+            <View className="items-center">
+              <View className="h-[5px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Jul</Text>
             </View>
 
           </View>
         </View>
 
-        <View className="bg-white rounded-2xl p-4 shadow mb-6">
-          <Text className="font-semibold text-[16px] mb-3">Purchase By Items</Text>
+      </View>
 
-          <View className="h-[180px] flex-row items-end justify-between px-3">
+      <View className="h-28" /> 
+    </ScrollView>
 
-            <View className="items-center">
-              <View className="h-[60px] w-[12px] bg-[#4f8bff] rounded-md"></View>
-              <Text className="text-xs mt-1">Mar</Text>
-            </View>
-
-            <View className="items-center">
-              <View className="h-[40px] w-[12px] bg-[#4f8bff] rounded-md"></View>
-              <Text className="text-xs mt-1">Apr</Text>
-            </View>
-
-            <View className="items-center">
-              <View className="h-[55px] w-[12px] bg-[#4f8bff] rounded-md"></View>
-              <Text className="text-xs mt-1">May</Text>
-            </View>
-
-            <View className="items-center">
-              <View className="h-[10px] w-[12px] bg-[#4f8bff] rounded-md"></View>
-              <Text className="text-xs mt-1">Jun</Text>
-            </View>
-
-            <View className="items-center">
-              <View className="h-[5px] w-[12px] bg-[#4f8bff] rounded-md"></View>
-              <Text className="text-xs mt-1">Jul</Text>
-            </View>
-
-          </View>
-        </View>
-
-        <View className="h-28" /> 
-      </ScrollView>
-
-      <BottomNavBar />
-
-      
-
+    <BottomNavBar />
 
     </View>
   );

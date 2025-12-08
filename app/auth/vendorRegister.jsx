@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Image } from "react-native";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { useState } from "react";
+import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function VendorRegisterForm() {
 
@@ -12,15 +12,15 @@ export default function VendorRegisterForm() {
       <ScrollView showsVerticalScrollIndicator={false} className="w-full">
 
         {/* Logo + Company Name */}
-              <View className="flex-row items-center justify-center mt-10 mb-10">
-                <Image
-                  source={require("../../assets/images/companylogo.png")}
-                  className="w-12 h-12 rounded-xl"
-                />
-                <Text className="text-[#3B6EF6] text-xl font-semibold ml-3">
-                  Company Name
-                </Text>
-              </View>
+        <View className="flex-row items-center justify-center mt-10 mb-10">
+          <Image
+            source={require("../../assets/images/companylogo.png")}
+            className="w-12 h-12 rounded-xl"
+          />
+          <Text className="text-[#3B6EF6] text-xl font-semibold ml-3">
+            Company Name
+          </Text>
+        </View>
         
 
         {/* Title */}
@@ -37,11 +37,11 @@ export default function VendorRegisterForm() {
         <View className="flex-row justify-between mb-4">
           <TextInput
             placeholder="First Name"
-            className="w-[48%] h-14 bg-[#f4f7fc] px-4 rounded-xl"
+            className="w-[48%] h-14 bg-[#f4f7fc] px-4 rounded-xl border border-[#DDE3F0]"
           />
           <TextInput
             placeholder="Last Name"
-            className="w-[48%] h-14 bg-[#f4f7fc] px-4 rounded-xl"
+            className="w-[48%] h-14 bg-[#f4f7fc] px-4 rounded-xl border border-[#DDE3F0]"
           />
         </View>
 
@@ -50,14 +50,14 @@ export default function VendorRegisterForm() {
         <TextInput
           placeholder="+91 00000 00000"
           keyboardType="phone-pad"
-          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4"
+          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4 border border-[#DDE3F0]"
         />
 
         {/* -------- Email -------- */}
         <Text className="text-gray-600 mb-2">Email Address</Text>
         <TextInput
           placeholder="youremail@gmail.com"
-          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4"
+          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4 border border-[#DDE3F0]"
         />
 
         {/* -------- Address -------- */}
@@ -65,35 +65,35 @@ export default function VendorRegisterForm() {
 
         <TextInput
           placeholder="Address Line 1"
-          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-3"
+          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-3 border border-[#DDE3F0]"
         />
 
         <TextInput
           placeholder="Address Line 2"
-          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-3"
+          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-3 border border-[#DDE3F0]"
         />
 
         {/* Area + Pincode */}
         <View className="flex-row gap-3 mb-3">
           <TextInput
             placeholder="Area"
-            className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl"
+            className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl border border-[#DDE3F0]"
           />
           <TextInput
             placeholder="Pincode"
             keyboardType="numeric"
-            className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl"
+            className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl border border-[#DDE3F0]"
           />
         </View>
 
         {/* City + State Dropdowns */}
         <View className="flex-row gap-3 mb-6">
-          <View className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl flex-row justify-between items-center">
+          <View className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl flex-row justify-between items-center border border-[#DDE3F0]">
             <Text className="text-gray-500">City</Text>
             <Feather name="chevron-down" size={20} color="#444" />
           </View>
 
-          <View className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl flex-row justify-between items-center">
+          <View className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl flex-row justify-between items-center border border-[#DDE3F0]">
             <Text className="text-gray-500">State</Text>
             <Feather name="chevron-down" size={20} color="#444" />
           </View>
@@ -103,23 +103,23 @@ export default function VendorRegisterForm() {
         <Text className="text-gray-600 mb-2">Shop Name / Company Name</Text>
         <TextInput
           placeholder="e.g. Gopal Tea Stall"
-          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-6"
+          className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-6 border border-[#DDE3F0]"
         />
 
         {/* -------- Terms & Conditions -------- */}
         <View className="flex-row items-center mb-10">
-                    <TouchableOpacity onPress={() => setRemember(!remember)}>
-                      {remember ? (
-                        <Ionicons name="checkbox-outline" size={22} color="#3B6EF6" />
-                      ) : (
-                        <Ionicons name="square-outline" size={22} color="#3B6EF6" />
-                      )}
-                    </TouchableOpacity>
+          <TouchableOpacity onPress={() => setRemember(!remember)}>
+            {remember ? (
+              <Ionicons name="checkbox-outline" size={22} color="#3B6EF6" />
+            ) : (
+              <Ionicons name="square-outline" size={22} color="#3B6EF6" />
+            )}
+          </TouchableOpacity>
         
-                    <Text className="ml-2 text-gray-700">By creating an account you have to agree with our{" "}
-                        <Text className="text-blue-500 underline">term & condition</Text>
-                    </Text>
-                  </View>
+          <Text className="ml-2 text-gray-700">By creating an account you have to agree with our{" "}
+            <Text className="text-blue-500 underline">term & condition</Text>
+          </Text>
+        </View>
 
         {/* -------- Register Button -------- */}
         <TouchableOpacity 

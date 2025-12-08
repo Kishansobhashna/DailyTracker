@@ -1,5 +1,7 @@
 import { router, usePathname } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect, useState } from "react";
 import ClientIcon from "../assets/icons/clientIcon.svg";
 import ClientActive from "../assets/icons/clientactive.svg";
 import HomeActive from "../assets/icons/homeActive.svg";
@@ -10,45 +12,58 @@ import ItemsActive from "../assets/icons/itemActive.svg";
 import ItemsIcon from "../assets/icons/itemIcon.svg";
 import ReportActive from "../assets/icons/reportActive.svg";
 import ReportIcon from "../assets/icons/reportIcon.svg";
+import VendorIcon  from "../assets/icons/VendorIcon.svg";
+import VendorActive from "../assets/icons/VendorActive.svg";
 
 export default function BottomNavBar() {
   const path = usePathname();
   const isActive = (route) => path === route;
 
+  const [role, setRole] = useState(null);
+
+  useEffect(() => {
+    const loadRole = async () => {
+      const r = await AsyncStorage.getItem("role");
+      setRole(r || "vendor");
+    };
+    loadRole();
+  }, []);
+
+
   const ACTIVE_COLOR = "#3F8CFF";
 
   const tabs = [
-    {
-      name: "Clients",
-      route: "/tabs/clients",
-      activeIcon: ClientActive,
-      inactiveIcon: ClientIcon,
-    },
-    {
-      name: "Invoice",
-      route: "/tabs/invoice",
-      activeIcon: InvoiceActive,
-      inactiveIcon: InvoiceIcon,
-    },
-    {
-      name: "Home",
-      route: "/tabs/home",
-      activeIcon: HomeActive,
-      inactiveIcon: HomeIcon,
-    },
-    {
-      name: "Report",
-      route: "/tabs/report",
-      activeIcon: ReportActive,
-      inactiveIcon: ReportIcon,
-    },
-    {
-      name: "Items",
-      route: "/tabs/items",
-      activeIcon: ItemsActive,
-      inactiveIcon: ItemsIcon,
-    },
-  ];
+  {
+    name: role === "vendor" ? "Clients" : "Vendors",
+    route: "/tabs/clients",
+    activeIcon: role === "vendor" ? ClientActive : VendorActive,
+    inactiveIcon: role === "vendor" ? ClientIcon : VendorIcon,
+  },
+  {
+    name: "Invoice",
+    route: "/tabs/invoice",
+    activeIcon: InvoiceActive,
+    inactiveIcon: InvoiceIcon,
+  },
+  {
+    name: "Home",
+    route: "/tabs/home",
+    activeIcon: HomeActive,
+    inactiveIcon: HomeIcon,
+  },
+  {
+    name: "Report",
+    route: "/tabs/report",
+    activeIcon: ReportActive,
+    inactiveIcon: ReportIcon,
+  },
+  {
+    name: "Items",
+    route: "/tabs/items",
+    activeIcon: ItemsActive,
+    inactiveIcon: ItemsIcon,
+  },
+];
 
   return (
     <View
@@ -74,16 +89,13 @@ export default function BottomNavBar() {
                 <View
                   className="
                     absolute rounded-full justify-center items-center
-                    -top-20 z-20
+                    -top-20 z-20 
+                    w-[65px] h-[65px] 
+                    border-[5px] border-[#DBEAFF]
                   "
-                  style={{
-                    backgroundColor: ACTIVE_COLOR,
-                    borderColor: "#DBEAFF",
-                    borderWidth: 5,
-                    width: 65,
-                    height: 65,
-                  }}
+                  style={{ backgroundColor: ACTIVE_COLOR }}
                 >
+
                   <tab.activeIcon width={40} height={35} />
                 </View>
 

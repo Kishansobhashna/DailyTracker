@@ -131,7 +131,7 @@ export default function ClientsScreen() {
 
       </ScrollView>
 
-      <BottomNavBar />
+      <BottomNavBar  />
     </View>
   );
 }

@@ -1,4 +1,4 @@
-import { Feather } from "@expo/vector-icons";
+// import { Feather } from "@expo/vector-icons";
 import { useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import BottomNavBar from "../../components/BootamNavbar";
@@ -26,7 +26,7 @@ export default function HomeScreen() {
               onPress={() => setOpenFilter(true)}
               className="h-12 w-12 rounded-xl bg-white items-center justify-center shadow"
             >
-              <FilterIcon width={40} height={35} />
+              <FilterIcon width={40} height={40} />
             </TouchableOpacity>  
           </View>
 
