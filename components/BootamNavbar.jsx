@@ -15,6 +15,7 @@ import ReportIcon from "../assets/icons/reportIcon.svg";
 import VendorIcon  from "../assets/icons/VendorIcon.svg";
 import VendorActive from "../assets/icons/VendorActive.svg";
 
+
 export default function BottomNavBar() {
   const path = usePathname();
   const isActive = (route) => path === route;
