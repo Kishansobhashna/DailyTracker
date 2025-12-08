@@ -111,7 +111,7 @@ export default function ClientsScreen() {
 
               {/* STOP PROPAGATION (WHITE BOX) */}
               <TouchableWithoutFeedback>
-                <View className="w-[376px] h-[636px] bg-white rounded-3xl p-7 justify-between mt-[100px]">
+                <View className="w-[376px] h-[640px] bg-white rounded-3xl p-7 justify-between mt-[100px]">
 
                   {/* Close Button */}
                   <TouchableOpacity
@@ -128,40 +128,40 @@ export default function ClientsScreen() {
                     <View className="flex-row gap-3 mb-4">
                       <TextInput
                         placeholder="First Name"
-                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]"
                       />
                       <TextInput
                         placeholder="Last Name"
-                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl"
+                        className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]"
                       />
                     </View>
 
                     <Text className="text-gray-600 mb-1">Phone</Text>
                     <TextInput
                       placeholder="+91 00000 00000"
-                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
+                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4 border border-[#DDE3F0]"
                     />
 
                     <Text className="text-gray-600 mb-1">Email Address</Text>
                     <TextInput
                       placeholder="youremail@gmail.com"
-                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
+                      className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4 border border-[#DDE3F0]"
                     />
 
                     <Text className="text-gray-600 mb-1">Address</Text>
 
-                    <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                    <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                    <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
+                    <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
+                    <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
+                    <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
 
                     <View className="flex-row gap-3 mb-3">
-                      <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                      <TextInput placeholder="Pincode" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                      <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
+                      <TextInput placeholder="Pincode" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
                     </View>
 
                     <View className="flex-row gap-3">
-                      <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                      <TextInput placeholder="State" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                      <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
+                      <TextInput placeholder="State" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
                     </View>
 
                   </View>

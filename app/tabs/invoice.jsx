@@ -48,35 +48,35 @@ export default function ClientsScreen() {
       address:
         "B-103 Maruti Complex,\nVaghodiya Chowkdi, Vadodara",
       amount: "₹ 2156.00/-",
-      date: "01 April 2025   TO   31 May 2025",
+      date: "01 April 2025   To   31 May 2025",
     },
     {
       name: "WEBYUG INFONET LLP",
       address:
         "704 Sun Gravitas, Radio Mirchi Road,\nNear Shyamal Cross Road, Ahmedabad",
       amount: "₹ 1120.00/-",
-      date: "01 April 2025   TO   31 May 2025",
+      date: "01 April 2025   To   31 May 2025",
     },
     {
       name: "Ajay Medical Store",
       address:
         "A-15 Avadh Arcade, Nikol,\nAhmedabad",
       amount: "₹ 1300.00/-",
-      date: "01 April 2025   TO   31 May 2025",
+      date: "01 April 2025   To   31 May 2025",
     },
     {
       name: "Charbhuja Marble",
       address:
         "P-445 near Vr Girls Collage,\nGondal road, Rajkot",
       amount: "₹ 1870.00/-",
-      date: "01 April 2025   TO   31 May 2025",
+      date: "01 April 2025   To   31 May 2025",
     },
     {
       name: "Patel Associates",
       address:
         "B-111 Twin Star, Nana Mava\nRoad, Rajkot",
       amount: "₹ 1200.00/-",
-      date: "01 April 2025   TO   31 May 2025",
+      date: "01 April 2025  To  31 May 2025",
     },
   ];
 
@@ -184,16 +184,16 @@ export default function ClientsScreen() {
                 <ScrollView showsVerticalScrollIndicator={false}>
 
                   <View className="items-center mt-2 mb-6">
-                    <Text className="text-[20px] font-semibold text-black">New Invoice</Text>
-                    <Text className="text-gray-500 mt-1">
-                      Invoice No : <Text className="font-semibold text-black">#0026</Text>
-                    </Text>
+                    <Text className="text-[20px] font-semibold text-black">New Invoice</Text>                
                   </View>
+                  <Text className="text-gray-500 mt-1">
+                      Invoice No : <Text className="font-semibold text-black">#0026</Text>
+                  </Text>
 
                   <View className="flex-row justify-between mb-5">
                     <TouchableOpacity
                       onPress={() => setOpenStartPicker(true)}
-                      className="flex-1 bg-[#eef3ff] py-3 rounded-xl mr-2 items-center border border-[#d8e4ff]"
+                      className="flex-1 bg-[#eef3ff] py-3 rounded-xl mr-2 items-center mt-2 border border-[#DDE3F0]"
                     >
                       <Text className="text-gray-700 font-medium">
                         {startDate ? startDate.toLocaleDateString() : "Start Date"}
@@ -202,7 +202,7 @@ export default function ClientsScreen() {
 
                     <TouchableOpacity
                       onPress={() => setOpenEndPicker(true)}
-                      className="flex-1 bg-[#eef3ff] py-3 rounded-xl ml-2 items-center border border-[#d8e4ff]"
+                      className="flex-1 bg-[#eef3ff] py-3 rounded-xl ml-2 items-center mt-2 border border-[#DDE3F0]"
                     >
                       <Text className="text-gray-700 font-medium">
                         {endDate ? endDate.toLocaleDateString() : "End Date"}
@@ -213,40 +213,40 @@ export default function ClientsScreen() {
                   <Text className="text-gray-600 mb-1">Name</Text>
                   <TextInput
                     placeholder="Enter Name"
-                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
+                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4 border border-[#DDE3F0]"
                   />
 
                   <Text className="text-gray-600 mb-1">Email Address</Text>
                   <TextInput
                     placeholder="youremail@gmail.com"
-                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
+                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4 border border-[#DDE3F0]"
                   />
 
                   <Text className="text-gray-600 mb-1">Contact</Text>
                   <TextInput
                     placeholder="+91 00000 00000"
-                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4"
+                    className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-4 border border-[#DDE3F0]"
                   />
 
                   <View className="w-full border-t border-gray-200" />
 
                   <Text className="text-gray-600 mb-2 ">Address</Text>
 
-                  <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                  <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
-                  <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3" />
+                  <TextInput placeholder="Office" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
+                  <TextInput placeholder="Address Line 1" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
+                  <TextInput placeholder="Address Line 2" className="bg-[#f4f7fc] px-4 py-3 rounded-xl mb-3 border border-[#DDE3F0]" />
 
                   <View className="flex-row gap-3 mb-3">
-                    <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                    <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                    <TextInput placeholder="Area" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
+                    <TextInput placeholder="City" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
                   </View>
 
                   <View className="w-full border-t border-gray-200" />
 
                   <Text className="text-gray-600 mb-1">Items</Text>
                   <View className="flex-row gap-3 mb-1">
-                    <TextInput placeholder="Select Item" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
-                    <TextInput placeholder="Enter Qty" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl" />
+                    <TextInput placeholder="Select Item" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
+                    <TextInput placeholder="Enter Qty" className="flex-1 bg-[#f4f7fc] px-4 py-3 rounded-xl border border-[#DDE3F0]" />
                   </View>
 
                   <View className="items-end">

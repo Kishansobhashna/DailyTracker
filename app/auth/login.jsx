@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
+
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -11,7 +12,6 @@ export default function LoginScreen() {
   return (
     <View className="flex-1 bg-white items-center justify-center px-6">
 
-      {/* Logo + Company Name */}
       <View className="flex-row items-center mb-10">
         <Image
           source={require("../../assets/images/companylogo.png")}
@@ -22,18 +22,14 @@ export default function LoginScreen() {
         </Text>
       </View>
 
-      {/* Card */}
       <View className="w-full rounded-3xl px-6 py-8  items-center">
 
-        {/* Title */}
         <Text className="text-[20px] font-bold text-black text-center mb-6">
           Login In as
         </Text>
 
-        {/* Vendor / Customer Toggle */}
         <View className="flex-row w-full justify-between mb-6">
           
-          {/* Vendor */}
           <TouchableOpacity
             onPress={() => setSelected("vendor")}
             className={`flex-1 flex-row items-center justify-center py-3 rounded-xl mr-3 ${
@@ -54,7 +50,6 @@ export default function LoginScreen() {
             </Text>
           </TouchableOpacity>
 
-          {/* Customer */}
           <TouchableOpacity
             onPress={() => setSelected("customer")}
             className={`flex-1 flex-row items-center justify-center py-3 rounded-xl ${
@@ -76,7 +71,6 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Email Input */}
         <View className="w-full mb-4">
           <Text className="text-[14px] text-gray-600 mb-1">Email Address</Text>
           <TextInput
@@ -85,7 +79,6 @@ export default function LoginScreen() {
           />
         </View>
 
-        {/* Password Input */}
         <View className="w-full mb-4">
           <Text className="text-[14px] text-gray-600 mb-1">Password</Text>
           <View className="w-full flex-row items-center bg-white border border-gray-300 rounded-xl px-4">
