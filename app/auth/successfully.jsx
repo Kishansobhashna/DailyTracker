@@ -19,10 +19,11 @@ export default function RegisterSuccessScreen() {
 
       {/* ----- Center Success Icon ----- */}
       <Image
-        source={require("../../assets/images/registration-successful-icon.png")} // your image here
-        className="h-40 w-40 mt-16"
+        source={require("../../assets/images/registration-successful-icon.png")}
+        className="w-[218px] h-[152px] mt-16"
         resizeMode="contain"
       />
+
 
       {/* ----- Message ----- */}
       <Text className="text-[18px] font-semibold text-black text-center mt-6">

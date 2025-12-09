@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Image } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Image, KeyboardAvoidingView, Platform } from "react-native";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 
 export default function VendorRegisterForm() {
 
-    const [remember, setRemember] = useState(false);
+  const [remember, setRemember] = useState(false);
     
   return (
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={{ flex: 1 }}
+  >
     <View className="w-full rounded-3xl p-7 items-center mt-[40px] ">
       <ScrollView showsVerticalScrollIndicator={false} className="w-full">
 
@@ -118,5 +122,6 @@ export default function VendorRegisterForm() {
         </Text>
       </ScrollView>
     </View>
+    </KeyboardAvoidingView>
   );
 }

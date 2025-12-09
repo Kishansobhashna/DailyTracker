@@ -20,7 +20,6 @@ export default function ClientsScreen() {
     <View className="flex-1 bg-[#e9f0ff]">
       <Header />
 
-      {/* -------- Title -------- */}
       <View className="mx-5 mt-4">
         <Text className="text-gray-600 text-sm">Hi, Welcome back Gopal Tea</Text>
 
@@ -33,17 +32,13 @@ export default function ClientsScreen() {
         </View>
       </View>
 
-      {/* -------- Client List -------- */}
       <ScrollView className="mt-1 px-5 mb-32">
         <View className="mt-8 bg-white rounded-2xl p-4 shadow w-[373px] h-[241px]">
 
-          {/* Title */}
           <Text className="font-semibold text-[16px] mb-3 ">Todays Summary</Text>
 
-          {/* Cards Row */}
           <View className="flex-row justify-between">
 
-            {/* Card 1 */}
             <View
               className="rounded-xl overflow-hidden border border-gray-200 w-[109px] h-[139px]"
             >
@@ -58,7 +53,6 @@ export default function ClientsScreen() {
               </View>
             </View>
 
-            {/* Card 2 */}
             <View
               className="rounded-xl overflow-hidden border border-gray-200 w-[109px] h-[139px]"
             >
@@ -73,7 +67,6 @@ export default function ClientsScreen() {
               </View>
             </View>
 
-            {/* Card 3 */}
             <View
               className="rounded-xl overflow-hidden border border-gray-200 w-[109px] h-[139px]"
             >
@@ -89,17 +82,15 @@ export default function ClientsScreen() {
             </View>
           </View>
 
-          {/* Show More Button */}
           <View className="items-center mt-5">
             <TouchableOpacity
-              className="bg-blue-500 w-[150px] h-[24px] rounded-full justify-center items-center"
+              className="bg-blue-500 w-[110px] h-[24px] rounded-full justify-center items-center"
             >
               <Text className="text-white font-semibold text-xs">Show More</Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* ================= Quick Links ================= */}
         <View className="mt-4 bg-white rounded-2xl p-4 mb-6">
           <Text className="font-semibold text-[18px] mb-4">Quick Links</Text>
 

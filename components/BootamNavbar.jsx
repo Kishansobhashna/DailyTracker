@@ -39,30 +39,40 @@ export default function BottomNavBar() {
     route: "/tabs/clients",
     activeIcon: role === "vendor" ? ClientActive : VendorActive,
     inactiveIcon: role === "vendor" ? ClientIcon : VendorIcon,
+    iconWidth: 40,
+    iconHeight: 35,
   },
   {
     name: "Invoice",
     route: "/tabs/invoice",
     activeIcon: InvoiceActive,
     inactiveIcon: InvoiceIcon,
+    iconWidth: 40,
+    iconHeight: 35,
   },
   {
     name: "Home",
     route: "/tabs/home",
     activeIcon: HomeActive,
     inactiveIcon: HomeIcon,
+    iconWidth: 40,
+    iconHeight: 35,
   },
   {
     name: "Report",
     route: "/tabs/report",
     activeIcon: ReportActive,
     inactiveIcon: ReportIcon,
+    iconWidth: 40,
+    iconHeight: 35,
   },
   {
     name: "Items",
     route: "/tabs/items",
     activeIcon: ItemsActive,
     inactiveIcon: ItemsIcon,
+    iconWidth: 30,
+    iconHeight: 30,
   },
 ];
 
@@ -97,7 +107,8 @@ export default function BottomNavBar() {
                   style={{ backgroundColor: ACTIVE_COLOR }}
                 >
 
-                  <tab.activeIcon width={40} height={35} />
+                  <tab.activeIcon width={tab.iconWidth} height={tab.iconHeight} />
+
                 </View>
 
                 <Text className="text-[14px] font-semibold mt-6" style={{ color: "#3F8CFF" }}>
@@ -107,7 +118,8 @@ export default function BottomNavBar() {
             ) : (
               /* INACTIVE TAB */
               <View className="items-center justify-center">
-                <tab.inactiveIcon width={40} height={35} />
+                <tab.inactiveIcon width={tab.iconWidth} height={tab.iconHeight} />
+
                 <Text className="text-[13px] font-normal mt-1" style={{ color: "#000" }}>
                   {tab.name}
                 </Text>

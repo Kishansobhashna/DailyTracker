@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
   Image
 } from "react-native";
-import { Ionicons, Feather } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import BottomNavBar from "../../components/BootamNavbar";
 import Header from "../../components/Header";
 
 export default function ClientsScreen() {
   const [activeTab, setActiveTab] = useState("Monthly");
+  
+
 
   const tabs = ["Weekly", "Monthly", "Yearly", "Custom"];
 
@@ -28,29 +30,31 @@ export default function ClientsScreen() {
 
       <View className="flex-row justify-between mb-4">
 
-          {tabs.map((tab) => {
-            const isActive = activeTab === tab;
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab;
 
-            return (
-              <TouchableOpacity
-                key={tab}
-                onPress={() => setActiveTab(tab)}
-                className={`rounded-xl w-[90px] h-[40px] items-center justify-center ${
-                  isActive ? "bg-[#4f8bff] shadow" : "bg-white"
+          return (
+            <TouchableOpacity
+              key={tab}
+              onPress={() => setActiveTab(tab)}
+              className={`
+                px-4 py-2 rounded-full 
+                ${isActive ? "bg-[#4f8bff]" : "bg-white border border-[#d0d7e6]"} 
+              `}
+            >
+              <Text
+                className={`font-semibold ${
+                  isActive ? "text-white" : "text-gray-600"
                 }`}
               >
-                <Text
-                  className={`font-medium ${
-                    isActive ? "text-white" : "text-gray-600"
-                  }`}
-                >
-                  {tab}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
+                {tab}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
 
       </View>
+
 
       <View className="flex-row justify-end items-center space-x-3 mb-4 pr-2">
           <Feather name="chevron-left" size={20} color="#7a8394" />
@@ -58,7 +62,79 @@ export default function ClientsScreen() {
           <Feather name="chevron-right" size={20} color="#7a8394" />
       </View>
 
-      <View className="bg-white rounded-2xl p-5 shadow mb-5">
+
+
+      {activeTab === "Weekly" ? (
+        <View className="bg-white rounded-2xl p-5 shadow mb-5">
+          <Text className="font-semibold text-[16px] text-[#9D9D9D] mb-4">
+            Weekly Purchase Report
+          </Text>
+
+          <View className="flex-row justify-between items-end">
+            <View className="items-center">
+              <View className="h-[40px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Mon</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[70px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Tue</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[55px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Wed</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[30px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Thu</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[80px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Fri</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[45px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Sat</Text>
+            </View>
+            <View className="items-center">
+              <View className="h-[20px] w-[12px] bg-[#4f8bff] rounded-md" />
+              <Text className="text-xs text-[#8F97A6] mt-1">Sun</Text>
+            </View>
+          </View>
+        </View>
+
+      ) : activeTab === "Yearly" ? (
+          <View className="bg-white rounded-2xl p-5 shadow mb-5">
+            <Text className="font-semibold text-[16px] text-[#9D9D9D] mb-4">
+              Yearly Purchase Report
+            </Text>
+
+            <View className="flex-row justify-between items-end">
+
+              <View className="items-center">
+                <View className="h-[40px] w-[14px] bg-[#4f8bff] rounded-md" />
+                <Text className="text-xs text-[#8F97A6] mt-1">2022</Text>
+              </View>
+
+              <View className="items-center">
+                <View className="h-[75px] w-[14px] bg-[#4f8bff] rounded-md" />
+                <Text className="text-xs text-[#8F97A6] mt-1">2023</Text>
+              </View>
+
+              <View className="items-center">
+                <View className="h-[110px] w-[14px] bg-[#4f8bff] rounded-md" />
+                <Text className="text-xs text-[#8F97A6] mt-1">2024</Text>
+              </View>
+
+              <View className="items-center">
+                <View className="h-[85px] w-[14px] bg-[#4f8bff] rounded-md" />
+                <Text className="text-xs text-[#8F97A6] mt-1">2025</Text>
+              </View>
+
+            </View>
+          </View>
+
+      ) : (
+        <View className="bg-white rounded-2xl p-5 shadow mb-5">
 
           <Text className="font-semibold text-[16px] text-[#9D9D9D] mb-4">
             Purchase By Items
@@ -105,7 +181,11 @@ export default function ClientsScreen() {
             </View>
 
           </View>
-      </View>
+        </View>
+
+      )}
+
+
 
 
       <View className="bg-white rounded-2xl p-5 shadow mb-1">

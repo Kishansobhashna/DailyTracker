@@ -7,6 +7,7 @@ import {
   Modal,
   TextInput,
   TouchableWithoutFeedback,
+  KeyboardAvoidingView, Platform
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import BottomNavBar from "../../components/BootamNavbar";
@@ -49,6 +50,7 @@ export default function ClientsScreen() {
   ];
 
   return (
+    
     <View className="flex-1 bg-[#e9f0ff]">
       <Header />
 
@@ -65,7 +67,7 @@ export default function ClientsScreen() {
       </View>
 
       {/* -------- Client List -------- */}
-      <ScrollView className="mt-5 px-5 mb-32">
+      <ScrollView className="mt-5 px-5 mb-32  ">
         {clients.map((item, index) => (
           <View
             key={index}

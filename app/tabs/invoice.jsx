@@ -25,10 +25,10 @@ export default function ClientsScreen() {
   const [city, setCity] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [openStartPicker, setOpenStartPicker] = useState(false);
-  const [openEndPicker, setOpenEndPicker] = useState(false);
+  const [startDate] = useState(null);
+  const [endDate] = useState(null);
+  const [ setOpenStartPicker] = useState(false);
+  const [ setOpenEndPicker] = useState(false);
 
   const cityList = ["Ahmedabad", "Amreli", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Botad", "Chhota Udaipur", "Dahod", 
         "Dang", "Devbhumi Dwarka", "Gandhinagar", "Gir Somnath", "Jamnagar", "Junagadh", "Kachchh", "Rajkot", "Surat", "Surendranagar"
@@ -170,6 +170,7 @@ export default function ClientsScreen() {
       
             {/* STOP PROPAGATION (WHITE BOX) */}
             <TouchableWithoutFeedback>
+              
               <View className="w-[376px] h-[636px] bg-white rounded-3xl p-7 justify-between mt-[100px]">
       
                 {/* Close Button */}
