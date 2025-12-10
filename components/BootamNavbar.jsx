@@ -1,133 +1,131 @@
-import { router, usePathname } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useEffect, useState } from "react";
-import ClientIcon from "../assets/icons/clientIcon.svg";
-import ClientActive from "../assets/icons/clientactive.svg";
-import HomeActive from "../assets/icons/homeActive.svg";
-import HomeIcon from "../assets/icons/homeIcon.svg";
-import InvoiceActive from "../assets/icons/invoiceActive.svg";
-import InvoiceIcon from "../assets/icons/invoiceIcon.svg";
-import ItemsActive from "../assets/icons/itemActive.svg";
-import ItemsIcon from "../assets/icons/itemIcon.svg";
-import ReportActive from "../assets/icons/reportActive.svg";
-import ReportIcon from "../assets/icons/reportIcon.svg";
-import VendorIcon  from "../assets/icons/VendorIcon.svg";
-import VendorActive from "../assets/icons/VendorActive.svg";
+  import { router, usePathname } from "expo-router";
+  import { Text, TouchableOpacity, View } from "react-native";
+  import AsyncStorage from "@react-native-async-storage/async-storage";
+  import { useEffect, useState } from "react";
+  import ClientIcon from "../assets/icons/clientIcon.svg";
+  import ClientActive from "../assets/icons/clientactive.svg";
+  import HomeActive from "../assets/icons/homeActive.svg";
+  import HomeIcon from "../assets/icons/homeIcon.svg";
+  import InvoiceActive from "../assets/icons/invoiceActive.svg";
+  import InvoiceIcon from "../assets/icons/invoiceIcon.svg";
+  import ItemsActive from "../assets/icons/itemActive.svg";
+  import ItemsIcon from "../assets/icons/itemIcon.svg";
+  import ReportActive from "../assets/icons/reportActive.svg";
+  import ReportIcon from "../assets/icons/reportIcon.svg";
+  import VendorIcon  from "../assets/icons/VendorIcon.svg";
+  import VendorActive from "../assets/icons/VendorActive.svg";
 
 
-export default function BottomNavBar() {
-  const path = usePathname();
-  const isActive = (route) => path === route;
+  export default function BottomNavBar() {
+    const path = usePathname();
+    const isActive = (route) => path === route;
 
-  const [role, setRole] = useState(null);
+    const [role, setRole] = useState(null);
 
-  useEffect(() => {
-    const loadRole = async () => {
-      const r = await AsyncStorage.getItem("role");
-      setRole(r || "vendor");
-    };
-    loadRole();
-  }, []);
+    useEffect(() => {
+      const loadRole = async () => {
+        const r = await AsyncStorage.getItem("role");
+        setRole(r || "vendor");
+      };
+      loadRole();
+    }, []);
 
 
-  const ACTIVE_COLOR = "#3F8CFF";
+    const ACTIVE_COLOR = "#3F8CFF";
 
-  const tabs = [
-  {
-    name: role === "vendor" ? "Clients" : "Vendors",
-    route: "/tabs/clients",
-    activeIcon: role === "vendor" ? ClientActive : VendorActive,
-    inactiveIcon: role === "vendor" ? ClientIcon : VendorIcon,
-    iconWidth: 40,
-    iconHeight: 35,
-  },
-  {
-    name: "Invoice",
-    route: "/tabs/invoice",
-    activeIcon: InvoiceActive,
-    inactiveIcon: InvoiceIcon,
-    iconWidth: 40,
-    iconHeight: 35,
-  },
-  {
-    name: "Home",
-    route: "/tabs/home",
-    activeIcon: HomeActive,
-    inactiveIcon: HomeIcon,
-    iconWidth: 40,
-    iconHeight: 35,
-  },
-  {
-    name: "Report",
-    route: "/tabs/report",
-    activeIcon: ReportActive,
-    inactiveIcon: ReportIcon,
-    iconWidth: 40,
-    iconHeight: 35,
-  },
-  {
-    name: "Items",
-    route: "/tabs/items",
-    activeIcon: ItemsActive,
-    inactiveIcon: ItemsIcon,
-    iconWidth: 30,
-    iconHeight: 30,
-  },
-];
+    const tabs = [
+    {
+      name: role === "vendor" ? "Clients" : "Vendors",
+      route: role === "vendor" ? "/tabs/clients" : "/tabs/vendors",
+      activeIcon: role === "vendor" ? ClientActive : VendorActive,
+      inactiveIcon: role === "vendor" ? ClientIcon : VendorIcon,
+      iconWidth: 40,
+      iconHeight: 35,
+    },
+    {
+      name: "Invoice",
+      route: "/tabs/invoice",
+      activeIcon: InvoiceActive,
+      inactiveIcon: InvoiceIcon,
+      iconWidth: 40,
+      iconHeight: 35,
+    },
+    {
+      name: "Home",
+      route: "/tabs/home",
+      activeIcon: HomeActive,
+      inactiveIcon: HomeIcon,
+      iconWidth: 40,
+      iconHeight: 35,
+    },
+    {
+      name: "Report",
+      route: "/tabs/report",
+      activeIcon: ReportActive,
+      inactiveIcon: ReportIcon,
+      iconWidth: 40,
+      iconHeight: 35,
+    },
+    {
+      name: "Items",
+      route: "/tabs/items",
+      activeIcon: ItemsActive,
+      inactiveIcon: ItemsIcon,
+      iconWidth: 30,
+      iconHeight: 30,
+    },
+  ];
 
-  return (
-    <View
-      className="
-        absolute bottom-0 left-0 right-0 
-        h-[120px] w-full mx-auto z-10
-        flex-row justify-center items-center 
-        bg-[#DBEAFF] rounded-t-3xl
-      "
-    >
-      {tabs.map((tab, index) => {
-        const active = isActive(tab.route);
+    return (
+      <View
+        className="
+          absolute bottom-0 left-0 right-0 
+          h-[120px] w-full mx-auto z-10
+          flex-row justify-center items-center 
+          bg-[#DBEAFF] rounded-t-3xl
+        "
+      >
+        {tabs.map((tab, index) => {
+          const active = isActive(tab.route);
 
-        return (
-          <TouchableOpacity
-            key={index}
-            className="w-1/5 items-center justify-center" // 20% per item
-            onPress={() => !active && router.push(tab.route)}
-          >
-            {/* ACTIVE TAB */}
-            {active ? (
-              <View className="items-center justify-center">
-                <View
-                  className="
-                    absolute rounded-full justify-center items-center
-                    -top-20 z-20 
-                    w-[65px] h-[65px] 
-                    border-[5px] border-[#DBEAFF]
-                  "
-                  style={{ backgroundColor: ACTIVE_COLOR }}
-                >
+          return (
+            <TouchableOpacity
+              key={index}
+              className="w-1/5 items-center justify-center" // 20% per item
+              onPress={() => !active && router.push(tab.route)}
+            >
+              {active ? (
+                <View className="items-center justify-center">
+                  <View
+                    className="
+                      absolute rounded-full justify-center items-center
+                      -top-20 z-20 
+                      w-[65px] h-[65px] 
+                      border-[5px] border-[#DBEAFF]
+                    "
+                    style={{ backgroundColor: ACTIVE_COLOR }}
+                  >
 
-                  <tab.activeIcon width={tab.iconWidth} height={tab.iconHeight} />
+                    <tab.activeIcon width={tab.iconWidth} height={tab.iconHeight} />
 
+                  </View>
+
+                  <Text className="text-[14px] font-semibold mt-6" style={{ color: "#3F8CFF" }}>
+                    {tab.name}
+                  </Text>
                 </View>
+              ) : (
+                <View className="items-center justify-center">
+                  <tab.inactiveIcon width={tab.iconWidth} height={tab.iconHeight} />
 
-                <Text className="text-[14px] font-semibold mt-6" style={{ color: "#3F8CFF" }}>
-                  {tab.name}
-                </Text>
-              </View>
-            ) : (
-              /* INACTIVE TAB */
-              <View className="items-center justify-center">
-                <tab.inactiveIcon width={tab.iconWidth} height={tab.iconHeight} />
-
-                <Text className="text-[13px] font-normal mt-1" style={{ color: "#000" }}>
-                  {tab.name}
-                </Text>
-              </View>
-            )}
-          </TouchableOpacity>
-        );
-      })}
-    </View>
-  );
-}
+                  <Text className="text-[13px] font-normal mt-1" style={{ color: "#000" }}>
+                    {tab.name}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    );
+  }

@@ -13,7 +13,7 @@ export default function ProfileEditScreen() {
     >
     <View className="flex-1 bg-[#e9f0ff]">
 
-      {/* HEADER */}
+
       <View className="w-full px-4 pt-6 mt-8 mb-8 bg-[#eef6ff]">
         <View className="bg-white rounded-3xl flex-row items-center px-4 w-[376px] h-[77px] self-center">
           
@@ -27,7 +27,7 @@ export default function ProfileEditScreen() {
         </View>
       </View>
 
-        {/* MAIN CONTENT */}
+
         <ScrollView showsVerticalScrollIndicator={false} className="px-5">
 
             <View className="bg-white rounded-3xl p-6 shadow">
@@ -35,8 +35,8 @@ export default function ProfileEditScreen() {
                 <View className="items-center w-full">
                 
                     <TouchableOpacity
-                        // onPress={() => router.push("/sub/profileEdit")}
-                        className="
+
+className="
                             absolute right-4 top-2
                             h-10 w-10
                             bg-white/90 

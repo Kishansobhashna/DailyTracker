@@ -17,10 +17,10 @@ export default function Verification() {
   };
 
   return (
-    <View className="flex-1 bg-white px-6 pt-16 items-center justify-center">
+    <View className="flex-1 bg-white px-6 pt-16 items-center ">
 
-      {/* LOGO + NAME */}
-      <View className="flex-row items-center mb-10">
+
+      <View className="flex-row items-center mb-10 mt-36">
         <Image
           source={require("../../assets/images/companylogo.png")}
           className="w-12 h-12 rounded-xl"
@@ -31,18 +31,18 @@ export default function Verification() {
       </View>
 
 
-      {/* CARD */}
+
       <View className="bg-white w-full rounded-3xl p-6 shadow-lg shadow-neutral-200 items-center">
 
         <Text className="text-2xl font-bold text-center mb-4 text-[#0A0A0A]">
           Verification
         </Text>
 
-        <Text className="text-gray-600 text-center mb-6">
+        <Text className="text-gray-600 text-center mb-6 mt-16">
           Enter Verification Code
         </Text>
 
-        {/* OTP BOXES WITH SPACE */}
+
         <View className="flex-row justify-center mb-6">
           {otp.map((value, index) => (
             <TextInput
@@ -64,7 +64,7 @@ export default function Verification() {
           ))}
         </View>
 
-        {/* RESEND */}
+
         <View className="flex-row justify-center mb-6">
           <Text className="text-gray-600">if you didn’t receive a code? </Text>
           <TouchableOpacity>
@@ -72,7 +72,7 @@ export default function Verification() {
           </TouchableOpacity>
         </View>
 
-        {/* VERIFY BUTTON */}
+
         <TouchableOpacity
           onPress={() => router.push("/auth/updatepassword")}
           className="bg-[#3B6EF6] w-full py-4 rounded-2xl shadow shadow-blue-300 items-center"

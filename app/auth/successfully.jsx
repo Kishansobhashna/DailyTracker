@@ -4,10 +4,10 @@ import { router } from "expo-router";
 
 export default function RegisterSuccessScreen() {
   return (
-    <View className="flex-1 bg-white items-center justify-center px-6">
+    <View className="flex-1 bg-white items-center  px-6">
 
-      {/* Logo + Company Name */}
-      <View className="flex-row items-center justify-center  mb-10">
+
+      <View className="flex-row items-center justify-center mt-36 mb-1">
         <Image
           source={require("../../assets/images/companylogo.png")}
           className="w-12 h-12 rounded-xl"
@@ -17,28 +17,29 @@ export default function RegisterSuccessScreen() {
           </Text>
       </View>
 
-      {/* ----- Center Success Icon ----- */}
-      <Image
-        source={require("../../assets/images/registration-successful-icon.png")}
-        className="w-[218px] h-[152px] mt-16"
-        resizeMode="contain"
-      />
+      <View className="flex-1 items-center mt-40">
 
+        <Image
+          source={require("../../assets/images/registration-successful-icon.png")}
+          className="w-[218px] h-[152px] mb-6"
+          resizeMode="contain"
+        />
 
-      {/* ----- Message ----- */}
-      <Text className="text-[18px] font-semibold text-black text-center mt-6">
-        You are registered successfully.
-      </Text>
-
-      {/* ----- Button ----- */}
-      <TouchableOpacity 
-        className="w-[145px] h-[48px] bg-[#3B82F6] px-10 py-4 rounded-2xl mt-8 shadow-lg"
-        onPress={() => router.push("/tabs/home")}
-      >
-        <Text className="text-white text-lg items-center justify-center font-semibold">
-          Start →
+        <Text className="text-[18px] font-semibold text-black text-center mb-8">
+          You are registered successfully.
         </Text>
-      </TouchableOpacity>
+
+        <TouchableOpacity 
+          className="w-[145px] h-[48px] bg-[#3B82F6] rounded-2xl shadow-lg items-center justify-center"
+          onPress={() => router.push("/tabs/home")}
+        >
+          <Text className="text-white text-lg font-semibold">
+            Start →
+          </Text>
+        </TouchableOpacity>
+
+      </View>
+
     </View>
   );
 }

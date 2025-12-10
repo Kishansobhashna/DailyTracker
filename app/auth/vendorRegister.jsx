@@ -15,7 +15,7 @@ export default function VendorRegisterForm() {
     <View className="w-full rounded-3xl p-7 items-center mt-[40px] ">
       <ScrollView showsVerticalScrollIndicator={false} className="w-full">
 
-        {/* Logo + Company Name */}
+
         <View className="flex-row items-center justify-center mt-10 mb-10">
           <Image
             source={require("../../assets/images/companylogo.png")}
@@ -25,9 +25,7 @@ export default function VendorRegisterForm() {
             Company Name
           </Text>
         </View>
-        
 
-        {/* Title */}
         <Text className="text-center text-[22px] font-bold text-black">
           Vendor
         </Text>
@@ -35,7 +33,7 @@ export default function VendorRegisterForm() {
           Register Form
         </Text>
 
-        {/* -------- Name -------- */}
+
         <Text className="text-gray-600 mb-2">Name</Text>
 
         <View className="flex-row justify-between mb-4">
@@ -49,7 +47,7 @@ export default function VendorRegisterForm() {
           />
         </View>
 
-        {/* -------- Phone -------- */}
+
         <Text className="text-gray-600 mb-2">Phone</Text>
         <TextInput
           placeholder="+91 00000 00000"
@@ -57,14 +55,14 @@ export default function VendorRegisterForm() {
           className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4 border border-[#DDE3F0]"
         />
 
-        {/* -------- Email -------- */}
+
         <Text className="text-gray-600 mb-2">Email Address</Text>
         <TextInput
           placeholder="youremail@gmail.com"
           className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-4 border border-[#DDE3F0]"
         />
 
-        {/* -------- Address -------- */}
+
         <Text className="text-gray-600 mb-2">Address</Text>
 
         <TextInput
@@ -77,7 +75,7 @@ export default function VendorRegisterForm() {
           className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-3 border border-[#DDE3F0]"
         />
 
-        {/* Area + Pincode */}
+
         <View className="flex-row gap-3 mb-3">
           <TextInput
             placeholder="Area"
@@ -90,7 +88,7 @@ export default function VendorRegisterForm() {
           />
         </View>
 
-        {/* City + State Dropdowns */}
+
         <View className="flex-row gap-3 mb-6">
           <View className="flex-1 h-14 bg-[#f4f7fc] px-4 rounded-xl flex-row justify-between items-center border border-[#DDE3F0]">
             <Text className="text-gray-500">City</Text>
@@ -103,14 +101,14 @@ export default function VendorRegisterForm() {
           </View>
         </View>
 
-        {/* -------- Shop Name -------- */}
+
         <Text className="text-gray-600 mb-2">Shop Name / Company Name</Text>
         <TextInput
           placeholder="e.g. Gopal Tea Stall"
           className="h-14 bg-[#f4f7fc] px-4 rounded-xl mb-6 border border-[#DDE3F0]"
         />
 
-        {/* -------- Terms & Conditions -------- */}
+
         <View className="flex-row items-center mb-10">
           <TouchableOpacity onPress={() => setRemember(!remember)}>
             {remember ? (
@@ -125,7 +123,7 @@ export default function VendorRegisterForm() {
           </Text>
         </View>
 
-        {/* -------- Register Button -------- */}
+
         <TouchableOpacity 
             className="h-14 bg-[#3B82F6] rounded-2xl justify-center items-center mb-4"
             onPress={() => router.push("/auth/successfully")}
@@ -133,7 +131,7 @@ export default function VendorRegisterForm() {
           <Text className="text-white text-lg font-semibold">Register →</Text>
         </TouchableOpacity>
 
-        {/* Footer */}
+
         <Text className="text-center text-gray-500 mb-10" onPress={() => router.push("/auth/login")}>
           Already have an account?{" "}
           <Text className="text-[#3B82F6]" >Log In</Text>

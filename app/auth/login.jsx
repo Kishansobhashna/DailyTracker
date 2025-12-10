@@ -93,7 +93,7 @@ export default function LoginScreen() {
           </View>
         </View>
 
-        {/* Remember me + Forgot Password */}
+
         <View className="w-full flex-row justify-between items-center mb-6">
           <View className="flex-row items-center">
             <TouchableOpacity onPress={() => setRemember(!remember)}>
@@ -112,26 +112,26 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Login Button */}
+
         <TouchableOpacity
-  onPress={async () => {
-    await AsyncStorage.setItem("role", selected); 
-    router.push("/tabs/home");
-  }}
-  className="w-full bg-[#3B6EF6] py-4 rounded-xl flex-row items-center justify-center"
->
-  <Text className="text-white text-[16px] font-semibold mr-2">Log In</Text>
-  <Ionicons name="arrow-forward" size={20} color="#fff" />
-</TouchableOpacity>
+          onPress={async () => {
+            await AsyncStorage.setItem("role", selected); 
+            router.push("/tabs/home");
+          }}
+          className="w-full bg-[#3B6EF6] py-4 rounded-xl flex-row items-center justify-center"
+        >
+          <Text className="text-white text-[16px] font-semibold mr-2">Log In</Text>
+          <Ionicons name="arrow-forward" size={20} color="#fff" />
+        </TouchableOpacity>
       </View>
 
-      {/* Register now */}
-      <TouchableOpacity
-        className="mt-8"
-        onPress={() => router.push("/auth/register")}
-      >
-        <Text className="text-gray-700">Register now</Text>
-      </TouchableOpacity>
-    </View>
+
+    <TouchableOpacity
+      className="mt-2"
+      onPress={() => router.push("/auth/register")}
+    >
+      <Text className="text-gray-700">Register now</Text>
+    </TouchableOpacity>
+  </View>
   );
 }

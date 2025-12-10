@@ -10,29 +10,28 @@ export default function NewPassword() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   return (
-    <View className="flex-1 bg-white items-center justify-center px-6 pt-16">
+    <View className="flex-1 bg-white items-center  px-6 pt-16">
 
-      {/* LOGO + NAME */}
-      <View className="flex-row items-center mb-10">
-        <Image
-          source={require("../../assets/images/companylogo.png")}
-          className="w-12 h-12 rounded-xl"
-        />
-        <Text className="text-[#3B6EF6] text-xl font-semibold ml-3">
-          Company Name
-        </Text>
-      </View>
+      <View className="flex-row items-center mb-10 mt-36">
+              <Image
+                source={require("../../assets/images/companylogo.png")}
+                className="w-12 h-12 rounded-xl"
+              />
+              <Text className="text-[#3B6EF6] text-xl font-semibold ml-3">
+                Company Name
+              </Text>
+            </View>
 
-      {/* CARD */}
+
       <View className="w-full bg-white rounded-3xl p-6 shadow-lg shadow-neutral-200 items-center">
 
         <Text className="text-2xl font-bold text-[#0A0A0A] mb-6 text-center">
           New Password
         </Text>
 
-        {/* NEW PASSWORD */}
-        <Text className="text-gray-600 mb-2 w-full">Enter New Password</Text>
-        <View className="flex-row items-center w-full bg-white border border-gray-200 rounded-2xl px-4 py-4 mb-4">
+
+        <Text className="text-gray-600 mb-2 mt-12 w-full">Enter New Password</Text>
+        <View className="flex-row items-center w-full bg-white border border-gray-200 rounded-2xl px-4 py-1 mb-4">
           <TextInput
             secureTextEntry={!showNew}
             placeholder="••••••••"
@@ -49,9 +48,9 @@ export default function NewPassword() {
           </TouchableOpacity>
         </View>
 
-        {/* CONFIRM PASSWORD */}
+
         <Text className="text-gray-600 mb-2 w-full">Confirm Password</Text>
-        <View className="flex-row items-center w-full bg-white border border-gray-200 rounded-2xl px-4 py-4 mb-6">
+        <View className="flex-row items-center w-full bg-white border border-gray-200 rounded-2xl px-4 py-1 mb-6">
           <TextInput
             secureTextEntry={!showConfirm}
             placeholder="••••••••"
@@ -68,7 +67,7 @@ export default function NewPassword() {
           </TouchableOpacity>
         </View>
 
-        {/* UPDATE BUTTON */}
+
         <TouchableOpacity
           onPress={() => router.push("/auth/success")}
           className="bg-[#3B6EF6] w-full py-4 rounded-2xl shadow shadow-blue-300 items-center"

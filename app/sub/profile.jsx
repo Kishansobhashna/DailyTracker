@@ -12,7 +12,7 @@
     return (
       <View className="flex-1 bg-[#e9f0ff]">
 
-        {/* HEADER */}
+
         <View className="w-full px-4 pt-6 mt-8 mb-8 bg-[#eef6ff]">
           <View className="bg-white rounded-3xl flex-row items-center px-4 w-[376px] h-[77px] self-center">
         
@@ -28,10 +28,10 @@
           </View>
         </View>
 
-        {/* CONTENT SCROLL */}
+
         <ScrollView showsVerticalScrollIndicator={false}>
 
-          {/* MAIN CARD */}
+
           <View className="bg-white rounded-3xl mx-5 p-6 mt-3 mb-10 shadow w-[374px] h-full self-center">
 
             <View className="items-center w-full">
@@ -51,14 +51,14 @@
                   <EditIcon width={40} height={40} />
                 </TouchableOpacity>
 
-              {/* PROFILE IMAGE */}
+
               <Image
                 source={require("../../assets/images/companylogo.png")}
                 className="h-24 w-24 rounded-full"
                 resizeMode="contain"
               />
 
-              {/* NAME TEXT */}
+
               <Text className="mt-4 text-[20px] font-semibold text-gray-900">
                 WEBYUG INFONET LLP
               </Text>
@@ -67,40 +67,39 @@
             </View>
 
 
-              {/* LINE */}
-              <View className="h-[1px] bg-gray-200 my-5 mt-8" />
 
-              <View className="space-y-6">
+            <View className="h-[1px] bg-gray-200 my-5 mt-8" />
 
-                <TouchableOpacity
-                  onPress={() => setShowInfo(!showInfo)}
-                  className={`
-                    flex-row items-center justify-between  py-2 rounded-xl
-                    ${showInfo ? "bg-[#]" : ""}
-                  `}
-                >
-                  <View className="flex-row items-center mt-4">
-                    
-                    {/* BLUE INDICATOR STRIP WHEN ACTIVE */}
-                    {showInfo && (
-                      <View className="h-full w-[3px] bg-[#4f8bff] rounded-full mr-3" />
-                    )}
+            <View className="space-y-6">
 
-                    <Ionicons
-                      name="information-circle-outline"
-                      size={22}
-                      color={showInfo ? "#4f8bff" : "#000"}
-                    />
+              <TouchableOpacity
+                onPress={() => setShowInfo(!showInfo)}
+                className={`
+                  flex-row items-center justify-between  py-2 rounded-xl
+                  ${showInfo ? "bg-[#]" : ""}
+                `}
+              >
+                <View className="flex-row items-center mt-4">
+                      
+                      {showInfo && (
+                        <View className="h-full w-[3px] bg-[#4f8bff] rounded-full mr-3" />
+                      )}
 
-                    <Text
-                      className={`ml-3 text-[16px] ${
-                        showInfo ? "text-[#4f8bff] font-semibold" : "text-gray-800"
-                      }`}
-                    >
-                      Info
-                    </Text>
+                      <Ionicons
+                        name="information-circle-outline"
+                        size={22}
+                        color={showInfo ? "#4f8bff" : "#000"}
+                      />
 
-                  </View>
+                      <Text
+                        className={`ml-3 text-[16px] ${
+                          showInfo ? "text-[#4f8bff] font-semibold" : "text-gray-800"
+                        }`}
+                      >
+                        Info
+                      </Text>
+
+                </View>
 
                   <Feather
                     name="chevron-down"
@@ -110,50 +109,50 @@
                       transform: [{ rotate: showInfo ? "180deg" : "0deg" }],
                     }}
                   />
-                </TouchableOpacity>
+              </TouchableOpacity>
 
 
-                {showInfo && (
-                  <View className="mt-4 ml-10 space-y-3">
+                  {showInfo && (
+                    <View className="mt-4 ml-10 space-y-3">
 
-                    <View>
-                      <Text className="text-gray-500 text-[13px]">Owner Name</Text>
-                      <Text className="text-gray-800 text-[15px] font-medium">
-                        Vaibhav Mistry
-                      </Text>
+                      <View>
+                        <Text className="text-gray-500 text-[13px]">Owner Name</Text>
+                        <Text className="text-gray-800 text-[15px] font-medium">
+                          Vaibhav Mistry
+                        </Text>
+                      </View>
+
+                      <View>
+                        <Text className="text-gray-500 text-[13px]">Phone Number</Text>
+                        <Text className="text-gray-800 text-[15px] font-medium">
+                          +91 98765 43210
+                        </Text>
+                      </View>
+
+                      <View>
+                        <Text className="text-gray-500 text-[13px]">Email ID</Text>
+                        <Text className="text-gray-800 text-[15px] font-medium">
+                          info@webyuginfonet.com
+                        </Text>
+                      </View>
+
+                      <View>
+                        <Text className="text-gray-500 text-[13px]">Business Name</Text>
+                        <Text className="text-gray-800 text-[15px] font-medium">
+                          WEBYUG INFONET LLP
+                        </Text>
+                      </View>
+
+                      <View>
+                        <Text className="text-gray-500 text-[13px]">Business Address</Text>
+                        <Text className="text-gray-800 text-[15px] font-medium leading-tight">
+                          401, Shreenath Complex,
+                          Paldi, Ahmedabad - 380007
+                        </Text>
+                      </View>
+
                     </View>
-
-                    <View>
-                      <Text className="text-gray-500 text-[13px]">Phone Number</Text>
-                      <Text className="text-gray-800 text-[15px] font-medium">
-                        +91 98765 43210
-                      </Text>
-                    </View>
-
-                    <View>
-                      <Text className="text-gray-500 text-[13px]">Email ID</Text>
-                      <Text className="text-gray-800 text-[15px] font-medium">
-                        info@webyuginfonet.com
-                      </Text>
-                    </View>
-
-                    <View>
-                      <Text className="text-gray-500 text-[13px]">Business Name</Text>
-                      <Text className="text-gray-800 text-[15px] font-medium">
-                        WEBYUG INFONET LLP
-                      </Text>
-                    </View>
-
-                    <View>
-                      <Text className="text-gray-500 text-[13px]">Business Address</Text>
-                      <Text className="text-gray-800 text-[15px] font-medium leading-tight">
-                        401, Shreenath Complex,
-                        Paldi, Ahmedabad - 380007
-                      </Text>
-                    </View>
-
-                  </View>
-                )}
+                  )}
 
                 <TouchableOpacity
                   onPress={() => setShowMembers(!showMembers)}

@@ -5,14 +5,10 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-  Modal,
-  TextInput,
-  TouchableWithoutFeedback,
 } from "react-native";
-import { Ionicons, Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 import BottomNavBar from "../../components/BootamNavbar";
 import Header from "../../components/Header";
-import FilterIcon from "../../assets/icons/filterIcon.svg"
 
 export default function ClientsScreen() {
 
@@ -85,6 +81,7 @@ export default function ClientsScreen() {
           <View className="items-center mt-5">
             <TouchableOpacity
               className="bg-blue-500 w-[110px] h-[24px] rounded-full justify-center items-center"
+              onPress={() => router.push("/sub/summary")} 
             >
               <Text className="text-white font-semibold text-xs">Show More</Text>
             </TouchableOpacity>
