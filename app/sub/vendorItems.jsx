@@ -52,6 +52,10 @@ export default function VendorItems() {
         </View>
       </View>
 
+      <View className="flex-row items-center justify-between px-5 mt-8">
+        <Text className="text-2xl font-semibold text-[#AAAAAA]">Items</Text>  
+      </View>
+
       <ScrollView className="px-5 mt-5" showsVerticalScrollIndicator={false}>
         {vendorProducts.map((item) => (
           <View

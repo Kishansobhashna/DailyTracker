@@ -42,9 +42,9 @@ export default function OnboardingSlider() {
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        onScroll={handleScroll}
-        scrollEventThrottle={16}
+        onMomentumScrollEnd={handleScroll}
       >
+
         {slides.map((slide, index) => (
           <View
             key={index}
@@ -67,7 +67,7 @@ export default function OnboardingSlider() {
               {slide.desc}
             </Text>
 
-            {/* Pagination */}
+
             <View className="flex-row mb-5">
               {slides.map((_, i) => (
                 <TouchableOpacity key={i} onPress={() => goToPage(i)}>
@@ -80,24 +80,24 @@ export default function OnboardingSlider() {
               ))}
             </View>
 
-            {/* Buttons on last slide */}
-            {index === slides.length - 1 && (
-  <View className="flex-row justify-between w-full px-6 mt-3">
-    <TouchableOpacity
-      className="bg-[#3B6EF6] flex-1 py-4 rounded-2xl mr-3 items-center"
-      onPress={() => router.push("/auth/register")}
-    >
-      <Text className="text-white text-[17px] font-semibold">Register</Text>
-    </TouchableOpacity>
 
-    <TouchableOpacity
-      className="border-2 border-[#3B6EF6] flex-1 py-4 rounded-2xl ml-3 items-center"
-      onPress={() => router.push("/auth/login")}
-    >
-      <Text className="text-[#3B6EF6] text-[17px] font-semibold">Log in</Text>
-    </TouchableOpacity>
-  </View>
-)}
+            {index === slides.length - 1 && (
+              <View className="flex-row justify-between w-full px-6 mt-3">
+                <TouchableOpacity
+                  className="bg-[#3B6EF6] flex-1 py-4 rounded-2xl mr-3 items-center"
+                  onPress={() => router.push("/auth/register")}
+                >
+                  <Text className="text-white text-[17px] font-semibold">Register</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  className="border-2 border-[#3B6EF6] flex-1 py-4 rounded-2xl ml-3 items-center"
+                  onPress={() => router.push("/auth/login")}
+                >
+                  <Text className="text-[#3B6EF6] text-[17px] font-semibold">Log in</Text>
+                </TouchableOpacity>
+              </View>
+            )}
 
           </View>
         ))}

@@ -466,7 +466,8 @@ export default function Header() {
                     <TouchableOpacity
                       className="flex-row items-center"
                       onPress={() => {
-                        router.replace("/auth/login");   
+                        router.dismissAll();      
+                        router.replace("/auth/login");  
                       }}
                     >
                       <Feather name="log-out" size={20} color="#4b5563" />

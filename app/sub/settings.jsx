@@ -16,21 +16,10 @@ export default function SettingsScreen() {
     const [comments, setComments] = useState(false);
 
     const handleLogout = () => {
-        Alert.alert(
-            "Logout",
-            "Are you sure you want to logout?",
-            [
-                { text: "Cancel", style: "cancel" },
-                {
-                    text: "Logout",
-                    style: "destructive",
-                    onPress: () => {
-                        router.replace("/auth/login"); 
-                    }
-                }
-            ]
-        );
+        router.dismissAll();
+        router.replace("/auth/login");
     };
+
 
   return (
     <View className="flex-1 bg-[#e9f0ff]">
@@ -85,17 +74,17 @@ export default function SettingsScreen() {
                 {openSection === "Account" && (
                 <View className="mt-2 space-y-4">
                     
-                    <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                    <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-3">
                         <Text className="text-[16px] font-semibold text-gray-800">Username</Text>
                         <Text className="mt-1 text-gray-600">Vaibhav Mistry</Text>
                     </View>
 
-                    <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                    <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-3">
                         <Text className="text-[16px] font-semibold text-gray-800">Email</Text>
                         <Text className="mt-1 text-gray-600">info@webyuginfonet.com</Text>
                     </View>
 
-                    <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                    <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-1">
                         <Text className="text-[16px] font-semibold text-gray-800">Phone Number</Text>
                         <Text className="mt-1 text-gray-600">+91 98765 43210</Text>
                     </View>
@@ -135,7 +124,7 @@ export default function SettingsScreen() {
                 {openSection === "Notifications" && (
                     <View className="mt-2 space-y-4">
 
-                        <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                        <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-2">
                             <View className="flex-row justify-between items-center">
                                 <Text className="text-[16px] font-semibold text-gray-800">
                                     Issue Activity
@@ -152,7 +141,7 @@ export default function SettingsScreen() {
                             </Text>
                         </View>
 
-                        <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                        <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-2">
                             <View className="flex-row justify-between items-center">
                                 <Text className="text-[16px] font-semibold text-gray-800">
                                     Tracking Activity
@@ -169,7 +158,7 @@ export default function SettingsScreen() {
                             </Text>
                         </View>
 
-                        <View className="bg-[#f4f8ff] rounded-2xl p-4">
+                        <View className="bg-[#f4f8ff] rounded-2xl p-4 mb-2">
                             <View className="flex-row justify-between items-center">
                                 <Text className="text-[16px] font-semibold text-gray-800">
                                     New Comments

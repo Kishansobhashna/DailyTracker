@@ -11,6 +11,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import BottomNavBar from "../../components/BootamNavbar";
 import Header from "../../components/Header";
 
+
 export default function ClientsScreen() {
   const [activeTab, setActiveTab] = useState("Monthly")
   const tabs = ["Weekly", "Monthly", "Yearly", "Custom"];
@@ -21,17 +22,44 @@ export default function ClientsScreen() {
   const [showEndPicker, setShowEndPicker] = useState(false);
 
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
+  setActiveTab(tab);
 
-    if (tab === "Custom") {
-      const today = new Date();
-      const lastMonth = new Date();
-      lastMonth.setMonth(lastMonth.getMonth() - 1);
+  if (tab === "Custom") {
+    const today = new Date();
+    const lastMonth = new Date();
+    lastMonth.setDate(today.getDate() - 30);
 
-      setStartDate(lastMonth);
-      setEndDate(today);
-    }
-  };
+    setStartDate(lastMonth);
+    setEndDate(today);
+  }
+};
+
+
+  // Generate bar chart values (no library required)
+const generateChartBars = (start, end) => {
+  if (!start || !end) {
+    // Default last 30 days
+    return Array.from({ length: 30 }, () =>
+      Math.floor(Math.random() * 100)
+    );
+  }
+
+  const diffDays = Math.max(
+    1,
+    Math.min(
+      30,
+      Math.floor((end - start) / (1000 * 60 * 60 * 24))
+    )
+  );
+
+  return Array.from({ length: diffDays }, () =>
+    Math.floor(Math.random() * 100)
+  );
+};
+
+// Auto generate chart data
+const chartBars = generateChartBars(startDate, endDate);
+
 
   return (
     <View className="flex-1 bg-[#e9f0ff]">
@@ -135,6 +163,7 @@ export default function ClientsScreen() {
 
         {activeTab === "Custom" ? (
           <View className="bg-white rounded-2xl p-5 shadow mb-5">
+
             <Text className="font-semibold text-[16px] text-[#9D9D9D] mb-4">
               Custom Date Range
             </Text>
@@ -162,22 +191,32 @@ export default function ClientsScreen() {
               </TouchableOpacity>
             </View>
 
-            <Text className="text-gray-500 text-sm mb-3">
-              Showing data from {startDate?.toDateString()} to{" "}
-              {endDate?.toDateString()}
-            </Text>
 
+            {startDate && endDate && (
+              <Text className="text-gray-500 text-sm mb-3">
+                Showing data from {startDate.toDateString()} to{" "}
+                {endDate.toDateString()}
+              </Text>
+            )}
 
-            <View className="h-[150px] bg-[#] rounded-xl items-center justify-center">
-              {/* <Text className="text-[#9D9D9D] font-semibold">
-                Custom Report Graph
-              </Text> */}
+            <View className="h-[150px] bg-[#f8faff] rounded-xl flex-row items-end justify-between px-3 py-3">
+
+              {chartBars.map((value, index) => (
+                <View key={index} className="items-center flex-1 mx-[1px]">
+                  <View
+                    className="bg-[#4f8bff] w-[6px] rounded-md"
+                    style={{ height: value }}
+                  />
+                </View>
+              ))}
+
             </View>
+
           </View>
         ) : null}
 
 
-        {activeTab !== "Weekly" &&
+      {activeTab !== "Weekly" &&
         activeTab !== "Yearly" &&
         activeTab !== "Custom" ? (
           <View className="bg-white rounded-2xl p-5 shadow mb-5">

@@ -44,7 +44,7 @@ export default function SummaryPage() {
       <View className="flex-row items-center justify-between px-5 mt-1">
           <TouchableOpacity
             onPress={() => setShowPicker(true)}
-            className="h-12 w-12 rounded-xl bg-white items-center justify-center shadow ml-auto"
+            className="h-12 w-12 rounded-xl bg-white items-center justify-center shadow ml-auto mb-2"
           >
             <FilterIcon width={48} height={40} />
           </TouchableOpacity>
